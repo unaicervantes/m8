@@ -1,0 +1,25 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     server1.ucervantes.edu. admin.ucervantes.edu. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      localhost.
+@       IN      A       127.0.0.1
+@       IN      AAAA    ::1
+
+; name servers - NS records
+   IN       NS      server1.ucervantes.edu.
+   IN       NS      server2.ucervantes.edu.
+
+; name servers - A records
+server1.ucervantes.edu.        IN      A      10.19.31.20
+server2.ucervantes.edu.        IN      A      10.19.31.30
+
+; 10.5.1.0/24 - A records
+client1.ucervantes.edu.        IN      A      10.19.31.40
